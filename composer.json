@@ -1,0 +1,22 @@
+{
+    "name": "ronal/app-salon_php_mvc",
+    "description": "MVC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Model\\": "./models",
+            "Clases\\": "./clases"
+        }
+    },
+    "authors": [
+        {
+            "name": "RONAL CASTILLO"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
