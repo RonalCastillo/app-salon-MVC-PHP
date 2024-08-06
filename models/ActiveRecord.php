@@ -127,7 +127,7 @@ class ActiveRecord
     // Busca un registro por su id
     public static function find($id)
     {
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE id = $id";
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE id = {$id}";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
     }
@@ -135,7 +135,7 @@ class ActiveRecord
     // Obtener Registros con cierta cantidad
     public static function get($limite)
     {
-        $query = "SELECT * FROM " . static::$tabla . " LIMIT $limite";
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT {$limite}";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
     }
@@ -149,7 +149,7 @@ class ActiveRecord
         // Insertar en la base de datos
         $query = " INSERT INTO " . static::$tabla . " ( ";
         $query .= join(', ', array_keys($atributos));
-        $query .= " ) VALUES (' ";
+        $query .= " ) VALUES ('";
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
 
@@ -197,7 +197,7 @@ class ActiveRecord
     //buscar un registro con dos parametros de la base de datos
     public static function where($columna, $valor)
     {
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE $columna = '$valor'";
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE {$columna} = '{$valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
     }

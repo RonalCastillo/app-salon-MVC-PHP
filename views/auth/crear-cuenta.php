@@ -16,7 +16,8 @@ include_once __DIR__ . "/../templates/alertas.php";
     </div>
     <div class="campo">
         <label for="apellido">Apellido</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" value="<?php echo s($usuario->apellido); ?>">
+        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido"
+            value="<?php echo s($usuario->apellido); ?>">
     </div>
     <div class="campo">
         <?php
@@ -24,12 +25,14 @@ include_once __DIR__ . "/../templates/alertas.php";
         //toma la fecha actual y le resta dos dias 
         $nueva_fecha = date('Y-m-d', strtotime('-1 days'));
         ?>
-        <label for="apellido">Fecha de Nacimiento</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" min="1900-01-01" max="<?php echo $nueva_fecha; ?>" value="<?php echo s($usuario->fecha_nacimiento); ?>">
+        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" min="1900-01-01"
+            max="<?php echo $nueva_fecha; ?>" value="<?php echo s($usuario->fecha_nacimiento); ?>">
     </div>
     <div class="campo">
         <label for="telefono">Telefono</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Tu telefono" value="<?php echo s($usuario->telefono); ?>">
+        <input type="tel" id="telefono" name="telefono" placeholder="Tu telefono"
+            value="<?php echo s($usuario->telefono); ?>">
     </div>
     <div class="campo">
         <label for="email">Email</label>
